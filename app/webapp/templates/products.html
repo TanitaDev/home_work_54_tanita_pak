@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<header>
+    <h3>Header</h3>
+</header>
+<div class="wrapper">
+    <div class="products_block">
+        {% for product in products %}
+        <p>{{product.name}}</p>
+        <p>{{product.category.name}}</p>
+        <p>{{product.price}}</p>
+        {% endfor %}
+    </div>
+</div>
+</body>
+</html>
