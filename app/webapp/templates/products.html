@@ -15,7 +15,7 @@
         <b>{{product.name}}</b>
         <p>Категория: {{product.category.name}}</p>
         <b>Цена: {{product.price}} тг</b>
-        <a class="more_link" href="">Посмотреть больше..</a>
+        <a class="more_link" href="{% url 'product_view' product.pk %}">Посмотреть больше..</a>
     </div>
 </div>
 {% endfor %}
