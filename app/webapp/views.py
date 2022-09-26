@@ -8,7 +8,7 @@ def products_view(request):
     context = {
         'products': products
     }
-    return render(request, 'products.html', context)
+    return render(request, 'index.html', context)
 
 
 def single_product_view(request, pk):
@@ -27,3 +27,13 @@ def category_add_view(request):
         description = request.POST.get("description")
         Category.objects.create(name=name, description=description)
         return redirect('/')
+
+
+def product_add_view(request):
+    if request.method == "GET":
+        return render(request, "product_add.html")
+    # elif request.method == "POST":
+    #     name = request.POST.get("name")
+    #     description = request.POST.get("description")
+    #     Category.objects.create(name=name, description=description)
+    #     return redirect('/')

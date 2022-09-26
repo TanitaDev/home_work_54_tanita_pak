@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}{{ product.name }}{% endblock %}
+{% block page_title %}
+Добавить товар
+{% endblock %}
+{% block products %}
+<div class="add_block">
+    <form action="{% url 'products_add' %}" method="post">
+        {% csrf_token %}
+        <label>Наименование товара</label><br/>
+        <input type="text" name="name"/><br/>
+
+        <label>Цена</label><br/>
+        <input type="number" name="price"/><br/>
+
+        <label>Изображение</label><br/>
+        <textarea name="image" cols="30" rows="10"></textarea><br/>
+
+        <label>Категория</label><br/>
+        <select name="category" id="">
+            <option value=""></option>
+        </select>
+
+        <label>Описание товара</label><br/>
+        <textarea name="description" cols="30" rows="10"></textarea><br/>
+
+        <input type="submit" value="Добавить">
+    </form>
+</div>
+{% endblock %}
