@@ -1,21 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Products{% endblock %}
 <body>
 <header>
     <h3>Header</h3>
 </header>
-<div class="wrapper">
-    <div class="products_block">
-        {% for product in products %}
-        <p>{{product.name}}</p>
-        <p>{{product.category.name}}</p>
-        <p>{{product.price}}</p>
-        {% endfor %}
+{% block products %}
+{% for product in products %}
+<div class="product_block">
+    <div class="img_block">
+        <img src="{{product.image}}" alt="">
+    </div>
+    <div class="content_block">
+        <b>{{product.name}}</b>
+        <p>Категория: {{product.category.name}}</p>
+        <b>Цена: {{product.price}} тг</b>
+        <a class="more_link" href="">Посмотреть больше..</a>
     </div>
 </div>
+{% endfor %}
+{% endblock %}
 </body>
 </html>
