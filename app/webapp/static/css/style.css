@@ -3,6 +3,10 @@ body {
     font-family: 'Nunito', sans-serif;
 }
 
+a {
+    text-decoration: none;
+}
+
 .wrapper {
     width:1120px;
     margin: 20px auto;
@@ -44,14 +48,13 @@ body {
 .more_link {
     display: inline-block;
     margin-top: 30px;
-    text-decoration: none;
     color: #000000;
     font-weight: bold;
+    transition: all ease 0.3s;
 }
 
 .more_link:hover {
     color: #006666;
-    transition: all ease 0.3s;
 }
 
 .products_container .content_block {
@@ -65,6 +68,64 @@ body {
 
 .single_product_block .img_block {
     min-width: 50%;
-    height: 530px;
+    height: 320px;
     margin-right: 25px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 7px 0px;
+}
+
+.nav_block {
+    display: flex;
+}
+
+.nav_block li {
+    list-style-type: none;
+    margin: 0px 10px;
+}
+
+.nav_block li a {
+    color: #ffffff;
+    font-size: 17px;
+}
+
+.nav_block li {
+    transition: all ease 0.3s;
+}
+
+.nav_block li:hover{
+    -webkit-transform: translateY(-4px);
+    transform: translateY(-4px);
+
+}
+
+.logo a {
+    font-weight: bold;
+    font-size: 27px;
+    color: #ffffff;
+}
+
+.logo {
+    transition: all ease 0.3s;
+}
+
+.logo:hover {
+    -webkit-transform: translateY(-4px);
+    transform: translateY(-4px);
+}
+
+.page_title {
+    font-size: 20px;
+    color: #ffffff;
+    padding: 20px 10px;
+    margin: 0;
+    text-align: center;
+}
+
+.add_block {
+    padding: 20px 10px;
 }

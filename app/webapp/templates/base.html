@@ -8,19 +8,24 @@
 </head>
 <body>
 <header>
-    <ul>
-        <li>
-            <a href="{% url 'products' %}">Products</a>
-        </li>
-        <li>
-            <a href="{% url 'categories_add' %}">Добавить категорию</a>
-        </li>
-        <li>
-            <a href="{% url 'products_add' %}">Добавить товар</a>
-        </li>
-    </ul>
+    <nav>
+        <div class="logo">
+            <a href="{% url 'home' %}">Market</a>
+        </div>
+        <ul class="nav_block">
+            <li>
+                <a href="{% url 'home' %}">Продукты</a>
+            </li>
+            <li>
+                <a href="{% url 'categories_add' %}">Добавить категорию</a>
+            </li>
+            <li>
+                <a href="{% url 'products_add' %}">Добавить товар</a>
+            </li>
+        </ul>
+    </nav>
 </header>
-<h3>
+<h3 class="page_title">
     {% block page_title %}
     {% endblock %}
 </h3>
