@@ -61,3 +61,17 @@ def delete_category_view(request, category_id):
     categories = Category.objects.get(pk=category_id)
     categories.delete()
     return redirect('categories/')
+
+
+def category_edit_view(request, pk):
+    category = get_object_or_404(Category, pk=pk)
+    if request.method == "GET":
+        context = {
+            "category": category
+        }
+        return render(request, 'category_edit.html', context)
+    elif request.method == "POST":
+        category.name = request.POST.get("name")
+        category.description = request.POST.get("description")
+        category.save()
+        return redirect('categories')

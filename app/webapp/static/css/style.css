@@ -135,3 +135,42 @@ nav {
     padding: 0px 20px;
     
 }
+
+.categories_form {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 6px 2px 8px 0px rgb(0 0 0 / 75%);
+    margin: 20px 0px;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+.categories_form p{
+    margin-right: 20px;
+}
+
+.edit_btn {
+    background-color: #008CBA;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    margin-right: 10px;
+    border-radius: 5px;
+}
+
+.delete_btn {
+    background-color: #d94035;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    border-radius: 5px;
+}

@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block categories%}Категории{% endblock %}
+{% block title %}Редактировать категорию{% endblock %}
+{% block page_title %}
+Редактировать категорию
+{% endblock %}
+{% block products %}
+<div class="categories_edit_block">
+    <form action="{% url 'category_edit' category.pk %}" method="post">
+        {% csrf_token %}
+        <label for="">Категория</label><br>
+        <input name="name" type="text" value="{{ category.name }}"><br>
+        <label for="">Описание категории</label><br>
+        <textarea name="description" id="" cols="30" rows="10">{{ category.description }}</textarea><br>
+        <input type="submit" value="Редактировать категорию"><br>
+    </form>
+</div>
+{% endblock %}

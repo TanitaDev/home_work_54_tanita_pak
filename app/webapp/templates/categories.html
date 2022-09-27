@@ -7,10 +7,11 @@
 {% block products %}
 <div class="categories_list_block">
     {% for category in categories %}
-    <form action="categories/">
+    <form class="categories_form" action="{% url 'categories' %}">
         <p>{{ category.name }}</p>
         <div class="bnt_block">
-            <a href="{% url 'delete' category_id=category.pk %}">Удалить</a>
+            <a class="edit_btn" href="{% url 'category_edit' category.pk %}">Редактировать</a>
+            <a class="delete_btn" href="{% url 'delete' category_id=category.pk %}">Удалить</a>
         </div>
     </form>
     {% endfor %}
