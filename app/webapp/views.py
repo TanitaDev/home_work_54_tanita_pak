@@ -1,4 +1,6 @@
+from django.http import HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404, redirect
+from django.urls import reverse
 
 from webapp.models import Product, Category
 
@@ -29,7 +31,7 @@ def category_add_view(request):
         return redirect('/')
 
 
-def product_add_view(request):
+def product_add_view(request, *args, **kwargs):
     if request.method == "GET":
         categories = Category.objects.all()
         context = {
@@ -42,5 +44,6 @@ def product_add_view(request):
         price = request.POST.get("price")
         category = Category.objects.get(pk=request.POST.get("category"))
         image = request.POST.get("image")
-        Product.objects.create(name=name, description=description, price=price, category=category, image=image)
-        return redirect('/')
+        product = Product.objects.create(name=name, description=description, price=price, category=category, image=image)
+        url = reverse("product_view", kwargs={'pk': product.pk})
+        return HttpResponseRedirect(url)
