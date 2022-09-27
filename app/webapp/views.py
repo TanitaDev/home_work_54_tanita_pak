@@ -47,3 +47,17 @@ def product_add_view(request, *args, **kwargs):
         product = Product.objects.create(name=name, description=description, price=price, category=category, image=image)
         url = reverse("product_view", kwargs={'pk': product.pk})
         return HttpResponseRedirect(url)
+
+
+def categories_view(request):
+    categories = Category.objects.all()
+    context = {
+        'categories': categories
+    }
+    return render(request, 'categories.html', context)
+
+
+def delete_category_view(request, category_id):
+    categories = Category.objects.get(pk=category_id)
+    categories.delete()
+    return redirect('categories/')

@@ -17,6 +17,9 @@
                 <a href="{% url 'home' %}">Продукты</a>
             </li>
             <li>
+                <a href="{% url 'categories' %}">{% block categories%}{% endblock %}</a>
+            </li>
+            <li>
                 <a href="{% url 'categories_add' %}">Добавить категорию</a>
             </li>
             <li>

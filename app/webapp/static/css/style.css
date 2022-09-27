@@ -129,3 +129,9 @@ nav {
 .add_block {
     padding: 20px 10px;
 }
+
+.categories_list_block {
+    width: 100%;
+    padding: 0px 20px;
+    
+}

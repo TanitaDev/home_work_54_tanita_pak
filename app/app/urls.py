@@ -23,5 +23,7 @@ urlpatterns = [
     path('', products_view, name='home'),
     path('products/<int:pk>', single_product_view, name='product_view'),
     path('categories/add/', category_add_view, name='categories_add'),
-    path('products/add/', product_add_view, name='products_add')
+    path('products/add/', product_add_view, name='products_add'),
+    path('categories/', categories_view, name='categories'),
+    path('<int:category_id>', delete_category_view, name='delete')
 ]

@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Категории{% endblock %}
+{% block page_title %}
+Категории
+{% endblock %}
+{% block products %}
+<div class="categories_list_block">
+    {% for category in categories %}
+    <form action="categories/">
+        <p>{{ category.name }}</p>
+        <div class="bnt_block">
+            <a href="{% url 'delete' category_id=category.pk %}">Удалить</a>
+        </div>
+    </form>
+    {% endfor %}
+</div>
+{% endblock %}
